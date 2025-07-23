@@ -6,7 +6,7 @@ import shap
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 # 加载保存的随机森林模型
-model = joblib.load(r'D:\本家+多中心\class1\model\rf.pkl')
+model = joblib.load('model\rf.pkl')
 
 # 特征范围定义（根据提供的特征范围和数据类型）
 feature_ranges = {
@@ -54,7 +54,7 @@ if st.button("Predict"):
     probability = predicted_proba[predicted_class] * 100
 
     # 显示预测结果，使用 Matplotlib 渲染指定字体
-    text = f"Based on feature values, predicted possibility of Class1 is {probability:.2f}%"
+    text = f"Based on feature values, predicted possibility of PL patients in sepsis is {probability:.2f}%"
     fig, ax = plt.subplots(figsize=(8, 1))
     ax.text(
         0.5, 0.5, text,
